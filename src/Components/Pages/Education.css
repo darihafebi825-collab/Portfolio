@@ -1,0 +1,143 @@
+.roadmap-wrapper {
+  background: #fff;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.roadmap-wrapper h1 {
+  font-size: 2.8rem;
+  color:  #f6b400;;
+  margin-bottom: 50px;
+  font-weight: 700;
+}
+
+/* Roadmap container - force single row */
+.roadmap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;       /* prevent wrapping */
+  position: relative;
+  gap: 20px;               /* reduced gap to fit more boxes */
+  overflow-x: auto;        /* optional: allow horizontal scroll if overflow */
+  padding-bottom: 20px;    /* space for scroll/visual comfort */
+}
+
+/* Each roadmap step */
+.roadmap-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Circle number */
+.roadmap-circle {
+  width: 40px;              /* smaller circle */
+  height: 40px;
+  background:  #f6b400;;
+  color: #fff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.roadmap-circle:hover {
+  transform: scale(1.2);
+}
+
+/* Card with smaller width & height for horizontal alignment */
+.roadmap-card {
+  background: #ffffff;
+  border: 3px solid  #f6b400;;
+  border-radius: 15px;
+  padding: 10px 15px;       /* reduced padding */
+  width: 150px;             /* smaller width */
+  height: 220px;            /* smaller height */
+  text-align: center;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.roadmap-card:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+/* Card text */
+.roadmap-card h2 {
+  margin: 0 0 5px 0;
+  font-size: 1rem;
+  color:  #f6b400;;
+  font-weight: 700;
+}
+
+.roadmap-year {
+  display: block;
+  font-size: 0.8rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.roadmap-card h3 {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Connecting line */
+.roadmap-line {
+  width: 50px;             /* slightly smaller */
+  height: 3px;             /* thinner */
+  background:  #f6b400;;
+  position: absolute;
+  top: 20px;               /* half of smaller circle */
+  left: 100%;
+}
+
+/* Education image */
+.edu-img {
+  width: 100%;
+  height: 90px;             /* smaller image */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Optional: left-align heading */
+h1 {
+  text-align: left;
+  margin-left: 30px;
+}
+.roadmap-card {
+  display: block;
+  padding: 25px;
+  border-radius: 15px;
+  background: white;
+  text-decoration: none;
+  color: #333;
+  transition: 0.3s ease;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+}
+
+.roadmap-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.15);
+}
+
+.roadmap-card h2,
+.roadmap-card h3,
+.roadmap-card span {
+  margin: 8px 0;
+}
