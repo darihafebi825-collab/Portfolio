@@ -4,7 +4,7 @@ import "./Education.css";
 import vicImg from "../../Images/vic.png";
 import aruImg from "../../Images/aru.png";
 import alagappaImg from "../../Images/alagappa.png";
-import noorulImg from "../../Images/noorul.png";
+
 
 const education = [
   {
@@ -35,13 +35,7 @@ const education = [
     img: alagappaImg,
     url: "https://r.search.yahoo.com/_ylt=AwrKFa2CdSBpGgIAn.K7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1764944515/RO=10/RU=https%3a%2f%2falagappauniversity.ac.in%2f/RK=2/RS=DsXW1Jt7NsHCOcD6Ikr8KtHo3Ac-",
   },
-  {
-    level: "PG (M.E - CSE)",
-    year: "2025 - 2027",
-    institute: "Noorul Islam College of Higher Education",
-    img: noorulImg,
-    url: "https://r.search.yahoo.com/_ylt=AwrKGGuvdSBpQAIAj7u7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1764944560/RO=10/RU=https%3a%2f%2fwww.niuniv.com%2f/RK=2/RS=5.Qyo8k3lU3dNaaQQ5nuobmmtHE-", 
-  },
+  
 ];
 
 const Education = () => {
@@ -51,7 +45,7 @@ const Education = () => {
       <div className="roadmap">
         {education.map((edu, idx) => (
           <div className="roadmap-item" key={idx}>
-            <div className="roadmap-circle">{idx + 1}</div>
+            <div className="roadmap-circle">{idx + 0}</div>
 
             {/* 🔗 full clickable card */}
             <a

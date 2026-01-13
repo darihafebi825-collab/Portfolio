@@ -1,4 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body, html {
+  width: 100%;
+  height: 100%;
+}
 
 .home-section {
   min-height: 100vh;
@@ -9,8 +18,7 @@
   text-align: center;
   perspective: 1000px;
   padding: 40px;
-
-  margin-top: 288px; /* moves entire section down */
+  margin-top: 75px; /* Fixed for navbar height (was 288px) */
 }
 
 /* Inner box with 3D shadow */
@@ -25,6 +33,7 @@
   padding: 60px 80px;
   transform: rotateY(3deg) rotateX(2deg);
   transition: all 0.6s ease;
+  max-width: 90%;
 }
 
 .home-content:hover {
@@ -40,6 +49,7 @@
   font-weight: 700;
   color: #333;
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 12px;
 }
 
 .home-title span {
@@ -50,8 +60,7 @@
 .home-tagline {
   font-size: 1.3rem;
   color: #555;
-  margin-top: 10px;
-  margin-bottom: 30px;
+  margin: 20px 0 30px 0;
 }
 
 /* Button styling */
@@ -64,22 +73,13 @@
   text-decoration: none;
   box-shadow: 0 4px 10px rgba(239, 193, 26, 0.4);
   transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .home-btn:hover {
   background-color: #d8ae0f;
   box-shadow: 0 6px 14px rgba(239, 193, 26, 0.5);
   transform: translateY(-3px);
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body, html {
-  width: 100%;
-  height: 100%;
 }
 
 .home-container {
@@ -92,4 +92,137 @@ body, html {
   justify-content: center;
 }
 
+/* ========================================
+   USER FRIENDLY RESPONSIVE MEDIA QUERIES
+   ======================================= */
 
+/* Large Tablet (1024px and below) */
+@media (max-width: 1024px) {
+  .home-section {
+    padding: 30px 20px;
+    margin-top: 70px;
+  }
+  
+  .home-content {
+    padding: 50px 60px;
+  }
+  
+  .home-title {
+    font-size: 2.5rem;
+  }
+  
+  .home-tagline {
+    font-size: 1.2rem;
+  }
+}
+
+/* Tablet Portrait (768px and below) */
+@media (max-width: 768px) {
+  .home-section {
+    padding: 25px 15px;
+    margin-top: 65px;
+    align-items: flex-start;
+    padding-top: 100px;
+  }
+  
+  .home-content {
+    padding: 40px 40px;
+    margin: 20px auto;
+    border-radius: 16px;
+    transform: rotateY(1deg) rotateX(1deg);
+  }
+  
+  .home-title {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+  
+  .home-tagline {
+    font-size: 1.1rem;
+    margin: 16px 0 24px 0;
+  }
+  
+  .home-btn {
+    padding: 14px 28px;
+    font-size: 16px;
+  }
+}
+
+/* Mobile Landscape (480px and below) */
+@media (max-width: 480px) {
+  .home-section {
+    padding: 20px 12px;
+    margin-top: 60px;
+    padding-top: 90px;
+  }
+  
+  .home-content {
+    padding: 30px 25px;
+    margin: 15px auto;
+    border-radius: 12px;
+  }
+  
+  .home-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .home-title span {
+    font-size: 1.8rem;
+  }
+  
+  .home-tagline {
+    font-size: 1rem;
+    margin: 12px 0 20px 0;
+  }
+  
+  .home-btn {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+}
+
+/* Small Mobile Portrait (360px and below) */
+@media (max-width: 360px) {
+  .home-section {
+    padding: 15px 10px;
+    margin-top: 55px;
+    padding-top: 85px;
+  }
+  
+  .home-content {
+    padding: 25px 20px;
+    margin: 10px auto;
+  }
+  
+  .home-title {
+    font-size: 1.6rem;
+  }
+  
+  .home-tagline {
+    font-size: 0.95rem;
+  }
+  
+  .home-btn {
+    padding: 11px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Landscape Mobile (narrow height) */
+@media (max-height: 500px) and (orientation: landscape) {
+  .home-section {
+    align-items: flex-start;
+    padding-top: 100px;
+    min-height: 100vh;
+  }
+  
+  .home-content {
+    padding: 30px 40px;
+    transform: none;
+  }
+  
+  .home-title {
+    font-size: 1.8rem;
+  }
+}

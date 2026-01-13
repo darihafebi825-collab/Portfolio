@@ -1,54 +1,33 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;   /* 🔥 Removes BOTH scrollbars */
+  /* overflow: hidden; */  /* remove this line */
 }
-.page-container {
-  padding-top: 100px;   /* pushes all pages below navbar */
+
+/* Remove ALL scrollbars from entire page */
+html, body {
+  overflow: hidden !important;
+  height: 100vh !important;
+  margin: 0;
+  padding: 0;
 }
-body {
-  padding-top: 75px;     /* SAME AS NAVBAR HEIGHT */
+
+/* OR for specific container only */
+.no-scroll {
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+  height: 100vh !important;
+  max-height: 100vh !important;
 }
-html {
-  scroll-behavior: smooth;
+
+/* Hide scrollbars but keep scrolling (visual only) */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;  /* Chrome/Safari */
 }

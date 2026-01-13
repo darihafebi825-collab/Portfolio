@@ -1,40 +1,56 @@
 import React, { useEffect, useRef } from "react";
 import "./Projects.css";
-
+import portImg from "../../Images/port.png";
 import resImg from "../../Images/res.png";
 import interiorImg from "../../Images/interior.png";
 import posterImg from "../../Images/poster.png";
 import phishImg from "../../Images/phish.png";
 
+// 🔗 LINKS
+const CODE_LINK = "https://github.com/darihafebi825-collab/Portfolio.git";
+const PREVIEW_LINK = "https://darihafebi825-collab.github.io/Portfolio/";
 
-
-// Replace videos with Unsplash image URLs
 const projects = [
-  { src: "https://images.unsplash.com/photo-1610484826967-09c5720778d2?auto=format&fit=crop&w=800&q=80", title: "Figma Project 1", domain: "Mobile App" },
-  { src: "https://images.unsplash.com/photo-1605902711622-cfb43c443f82?auto=format&fit=crop&w=800&q=80", title: "Figma Project 2", domain: "Mobile App" },
-  { src: "https://images.unsplash.com/photo-1623051837466-55f6e79c8450?auto=format&fit=crop&w=800&q=80", title: "AI Project 1", domain: "AI / ML" },
-{
-  src: phishImg,
-  title: "Fullstack",
-  domain: "MachineLearning"
-},
   {
-  src: posterImg,
-  title: "Web Project-1 (HTML,CSS)",
-  domain: "Frontend"
-},
-    {
-  src: interiorImg,
-  title: "Web Project-2 (HTML,CSS)",
-  domain: "Frontend"
-},
-    {
-  src: resImg,
-  title: "Web Project-1(HTML,CSS,JS)",
-  domain: "Frontend"
-},
- 
-
+    src: "https://images.unsplash.com/photo-1610484826967-09c5720778d2?auto=format&fit=crop&w=800&q=80",
+    title: "Figma Project 1",
+    domain: "Mobile App",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1605902711622-cfb43c443f82?auto=format&fit=crop&w=800&q=80",
+    title: "Figma Project 2",
+    domain: "Mobile App",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1623051837466-55f6e79c8450?auto=format&fit=crop&w=800&q=80",
+    title: "AI Project 1",
+    domain: "AI / ML",
+  },
+  {
+    src: phishImg,
+    title: "Phishx - Phishing Detector",
+    domain: "Fullstack",
+  },
+  {
+    src: posterImg,
+    title: "Web Project-1 (HTML, CSS)",
+    domain: "Frontend",
+  },
+  {
+    src: interiorImg,
+    title: "Web Project-2 (HTML, CSS)",
+    domain: "Frontend",
+  },
+  {
+    src: resImg,
+    title: "Web Project-3 (HTML, CSS, JS)",
+    domain: "Frontend",
+  },
+  {
+    src: portImg,
+    title: "React Project",
+    domain: "Frontend",
+  },
 ];
 
 const Projects = () => {
@@ -66,6 +82,8 @@ const Projects = () => {
     updateRotation();
 
     const handleDown = (e) => {
+      // 🔑 DO NOT START DRAG WHEN CLICKING BUTTON
+      if (e.target.closest(".action-btn")) return;
       isDragging.current = true;
       startX.current = e.clientX || e.touches?.[0]?.clientX;
     };
@@ -104,12 +122,10 @@ const Projects = () => {
 
   return (
     <div className="arc-gallery-page">
-      {/* Left-side info */}
       <div className="projects-info">
         <h1>PROJECT</h1>
       </div>
 
-      {/* Right-side 3D carousel */}
       <div className="arc-gallery-wrapper">
         <div className="arc-gallery" ref={containerRef}>
           {projects.map((project, i) => (
@@ -119,12 +135,26 @@ const Projects = () => {
               ref={(el) => (cardsRef.current[i] = el)}
             >
               <img src={project.src} alt={project.title} />
+
               <div className="info">
                 <h3>{project.title}</h3>
                 <p>{project.domain}</p>
+
+                {/* ✅ GUARANTEED WORKING BUTTONS */}
                 <div className="buttons">
-                  <button className="preview">Preview</button>
-                  <button className="download">Download</button>
+                  <button
+                    className="action-btn preview"
+                    onClick={() => window.open(PREVIEW_LINK, "_blank")}
+                  >
+                    Preview
+                  </button>
+
+                  <button
+                    className="action-btn download"
+                    onClick={() => window.open(CODE_LINK, "_blank")}
+                  >
+                    Code
+                  </button>
                 </div>
               </div>
             </div>

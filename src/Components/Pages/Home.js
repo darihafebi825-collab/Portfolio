@@ -20,6 +20,7 @@ const Home = () => {
         <img src={Img} alt="Dariha" className="home-img" />
       </div>
     </section>
+    
   );
 };
 

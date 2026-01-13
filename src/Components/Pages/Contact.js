@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import "./Contact.css";
-import { Instagram, Github, MessageCircle, Linkedin, Twitter } from "lucide-react";
+// import { Instagram, Github, MessageCircle, Linkedin, Twitter } from "lucide-react";
 
 
 const Contact = () => {
@@ -52,7 +52,7 @@ const Contact = () => {
 
   return (
     <div className="contact-wrapper">
-      <h1>Contact Me</h1>
+      <h2>Contact Me</h2>
       <div className="contact-grid">
         {/* Left: Contact Form */}
         <form className="contact-form" onSubmit={handleSubmit}>
@@ -85,14 +85,14 @@ const Contact = () => {
         {/* Right Info Box */}
         <div className="contact-box">
           <div className="box-header">
-            <h2>Get in Touch</h2>
+            <h2>Get in Touch </h2><h4>@ darihafebi825@gmail.com</h4>
           </div>
           <p>
             I would love to hear from you! Please fill out the form.
             If you would like me to work on your projects, feel free to get in touch.
             I will be available immediately.
           </p>
-           <div className="icons-wrapper">
+           {/* <div className="icons-wrapper">
       <a href="#" target="_blank" rel="noopener noreferrer">
         <Instagram className="icon" />
       </a>
@@ -112,7 +112,7 @@ const Contact = () => {
       <a href="#" target="_blank" rel="noopener noreferrer">
         <Twitter className="icon" />
       </a>
-    </div>
+    </div> */}
 
         </div>
       </div>

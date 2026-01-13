@@ -1,132 +1,141 @@
 /* ===============================
-   Home Section - Clean Yellow Theme (Left Layout)
+   Home Section - Clean Yellow Theme
    =============================== */
 .home-section {
   position: relative;
   min-height: 100vh;
-  background-color: #ffffff; /* pure white */
+  background-color: #ffffff;
   display: flex;
-  align-items: flex-start; /* slightly higher alignment */
+  align-items: flex-start;
   justify-content: flex-start;
-  text-align: left;
-padding: 230px 100px 0;
-
-
+  padding: 20vh 5vw 0;
   box-sizing: border-box;
   overflow: hidden;
 }
 
-/* ===============================
-   Decorative Yellow Blob (Top Right)
-   =============================== */
+/* Decorative Yellow Blob - background only */
 .home-section::before {
   content: '';
   position: absolute;
-  top: -120px;   /* slightly above */
-  right: -130px;
-  width: 500px;
-  height: 500px;
-  background:  #f6b400; /* bright yellow */
+  top: -20vh;
+  right: -25vw;
+  width: 50vw;
+  max-width: 500px;
+  height: 50vw;
+  max-height: 500px;
+  background: #f6b400;
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-  z-index: 0;
+  z-index: 0; /* always behind everything */
   animation: blobMove 10s ease-in-out infinite alternate;
   opacity: 0.95;
 }
+
+/* Content Container - text/buttons */
 .home-content {
   position: relative;
-  z-index: 2;
-  max-width: 600px;
-  background: transparent;
-  border-radius: 10px;
-  padding: 20px 0;
-  margin-top: -40px;   /* ⬅️ moves ONLY the text upward */
-  transition: all 0.3s ease;
-}
-
-/* Floating blob animation */
-@keyframes blobMove {
-  0% {
-    transform: scale(1) translate(0px, 0px);
-  }
-  100% {
-    transform: scale(1.1) translate(25px, -20px);
-  }
-}
-
-/* ===============================
-   Home Content (on top of blob)
-   =============================== */
-.home-content {
-  position: relative;
-  z-index: 2;
-  max-width: 600px;
-  background: transparent;
-  border-radius: 10px;
-  padding: 20px 0;
-  transition: all 0.3s ease;
-  left: 20px;
+  z-index: 2; /* above blob */
+  max-width: 90%;
+  padding: 1em 0;
+  margin-top: -5vh;
 }
 
 /* Title */
 .home-title {
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 800;
   color: #333;
-  margin-bottom: 15px;
+  margin-bottom: 0.5em;
 }
 
 .home-title span {
-  color:  #f6b400;;
+  color: #f6b400;
 }
 
 /* Tagline */
 .home-tagline {
-  font-size: 1.3rem;
+  font-size: 1rem;
   color: #555;
-  margin-bottom: 35px;
+  margin-bottom: 2em;
 }
 
 /* Button */
 .home-btn {
   display: inline-block;
-  background-color:  #f6b400;;
+  background-color: #f6b400;
   color: white;
-  padding: 12px 25px;
+  padding: 10px 20px;
   border-radius: 30px;
   font-weight: 600;
   text-decoration: none;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition: transform 0.3s ease;
+  z-index: 3;
 }
 
 .home-btn:hover {
-  background-color:  #f6b400;;
   transform: translateY(-3px);
 }
-.home-section {
-  /* your existing styles */
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
+
+/* Image in front of blob */
 .home-img {
-  width: 430px; /* ⬅️ reduce from 400px to 320px for smaller size */
- 
-  position: relative;
-  left: 330px;
-  top: -220px;
-  
-  z-index: 4;
+  position: absolute; /* allow overlap */
+  z-index: 1; /* above blob, below text if needed */
+  width: 70vw;
+  max-width: 400px;
+  right: 10vw; /* adjust horizontal position */
+  top: 10vh;   /* adjust vertical position */
   transition: transform 0.4s ease, filter 0.4s ease;
   filter: drop-shadow(0px 10px 25px rgba(0, 0, 0, 0.25));
 }
 
-.home-title {
-  font-size: 3rem;
-  font-weight: 800;
-  color: #333;
-  display: inline-block;
-  transform: translateX(-35px); /* moves it 20px left */
+/* Floating Blob Animation */
+@keyframes blobMove {
+  0% { transform: scale(1) translate(0,0); }
+  100% { transform: scale(1.1) translate(5%, -5%); }
 }
 
-.home-title span {
-  color:  #f6b400;;
+/* Entry Animations (unchanged) */
+.home-title { opacity:0; animation: slideFromLeft 0.9s ease-out forwards; }
+@keyframes slideFromLeft { 0% { opacity:0; transform:translateX(-20%);} 100%{opacity:1; transform:translateX(0);} }
+
+.home-tagline { opacity:0; animation: floatUp 1s ease-out 0.2s forwards; }
+@keyframes floatUp { 0% { opacity:0; transform:translateY(5vh);} 100%{opacity:1; transform:translateY(0);} }
+
+.home-btn { opacity:0; animation: btnPopForward 0.8s ease-out 0.4s forwards; transform-style: preserve-3d; }
+@keyframes btnPopForward { 0% {opacity:0; transform:translateZ(-20px) scale(0.8);} 60% {opacity:1; transform:translateZ(10px) scale(1.05);} 100% {opacity:1; transform:translateZ(0) scale(1);} }
+
+.home-img { opacity:0; animation: imgFromTop 1.2s cubic-bezier(.25,.8,.25,1) 0.3s forwards; }
+@keyframes imgFromTop { 0% {opacity:0; transform:translateY(-10vh) scale(0.95);} 60% {opacity:1; transform:translateY(2vh) scale(1);} 100% {opacity:1; transform:translateY(0);} }
+
+/* ===============================
+   MEDIA QUERIES
+   =============================== */
+
+/* Tablet / Small Laptops */
+@media (min-width: 481px) {
+  .home-section { padding: 25vh 8vw 0; }
+  .home-title { font-size: 2.5rem; }
+  .home-tagline { font-size: 1.2rem; }
+  .home-btn { padding: 12px 25px; font-size: 1rem; }
+  .home-img { width: 50vw; max-width: 430px; right: 5vw; top: 12vh; }
+  .home-section::before { width: 40vw; height: 40vw; top: -15vh; right: -15vw; }
+}
+
+/* Laptops / Desktop */
+@media (min-width: 1025px) {
+  .home-section { padding: 28vh 10vw 0; }
+  .home-title { font-size: 3rem; }
+  .home-tagline { font-size: 1.3rem; }
+  .home-btn { padding: 14px 30px; font-size: 1.1rem; }
+  .home-img { width: 35vw; max-width: 430px; right: 10vw; top: 10vh; }
+  .home-section::before { width: 500px; height: 500px; top: -12vh; right: -10vw; }
+}
+
+/* Large Screens / TV */
+@media (min-width: 1440px) {
+  .home-section { padding: 30vh 12vw 0; }
+  .home-title { font-size: 3.5rem; }
+  .home-tagline { font-size: 1.5rem; }
+  .home-btn { padding: 16px 35px; font-size: 1.2rem; }
+  .home-img { width: 30vw; max-width: 500px; right: 12vw; top: 12vh; }
+  .home-section::before { width: 600px; height: 600px; top: -15vh; right: -12vw; }
 }
