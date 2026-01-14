@@ -85,7 +85,7 @@ AI Product Developer
 
 - GitHub: https://github.com/darihafebi825-collab  
 - LinkedIn: https://www.linkedin.com/in/dariha-suresh-262a933a0  
-- Portfolio: https://darihafebi825-collab.github.io/Portfolio/
+
 
 ---
 
