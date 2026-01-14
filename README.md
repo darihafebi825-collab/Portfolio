@@ -5,7 +5,7 @@ A modern React.js portfolio website to showcase my skills, projects, and experie
 ---
 
 ## 🚀 Live Demo
-https://your-portfolio-link.com
+https://darihafebi825-collab.github.io/Portfolio/
 
 ---
 
@@ -59,7 +59,7 @@ myportfolio/
 ## ✨ Features
 
 - Single Page Application (SPA)
-- Responsive UI
+- Fully responsive UI
 - React Router navigation
 - Project showcase
 - Skills, education, and contact sections
@@ -70,8 +70,8 @@ myportfolio/
 ## ⚙️ Installation
 
 ```bash
-git clone https://github.com/yourusername/your-repo-name.git
-cd myportfolio/dapp
+git clone https://github.com/darihafebi825-collab/Portfolio.git
+cd Portfolio
 npm install
 npm start
 ```
@@ -83,8 +83,9 @@ npm start
 **Dariha A**  
 AI Product Developer  
 
-- GitHub: https://github.com/yourusername  
-- LinkedIn: https://linkedin.com/in/yourname  
+- GitHub: https://github.com/darihafebi825-collab  
+- LinkedIn: https://www.linkedin.com/in/dariha-suresh-262a933a0  
+- Portfolio: https://darihafebi825-collab.github.io/Portfolio/
 
 ---
 
@@ -92,10 +93,13 @@ AI Product Developer
 
 ```text
 MIT License
+
 Copyright (c) 2026 Dariha A
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files to deal in the Software
 without restriction.
 ```
+
+
 
